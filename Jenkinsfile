@@ -1,8 +1,15 @@
 pipeline {
+
     agent any
+    
     stages {
-       
-        stage('Build') {
+         stage('build') {
+          steps {
+              bat 'npm install'
+            }
+          }
+        
+       stage('Build') {
             steps {
                 // Step to build Docker image
                 script {
@@ -30,5 +37,6 @@ pipeline {
                 }
             }
         }
+
     }
 }
