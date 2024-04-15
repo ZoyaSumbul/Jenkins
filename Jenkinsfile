@@ -11,10 +11,11 @@ pipeline {
         
        stage('Build') {
             steps {
+                bat 'docker build .'
                 // Step to build Docker image
-                script {
-                    docker.build('Task:latest')
-                }
+                // script {
+                //     docker.build('Task:latest')
+                // }
             }
         }
         
